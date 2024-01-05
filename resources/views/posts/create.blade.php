@@ -17,16 +17,19 @@
             <h1 class="text-3xl font-bold">
                 CREATE NEW POST
             </h1>
-        </div>        <div class="col-span-4">
+        </div>
+        <div class="col-span-4">
 
-        </div>    </div>    <div class="bg-white p-5 rounded shadow-sm">
+        </div>
+    </div>
+    <div class="bg-white p-5 rounded shadow-sm">
         <form action="{{ route('post.store') }}" method="POST">
             @csrf
 
             <div class="mb-5">
                 <label for="title">Title</label>
-                <input type="text" class="
-                    form-control                    block                    w-full                    px-3                    py-1.5                    text-base                    font-normal                    text-gray-700                    bg-white bg-clip-padding                    border border-solid border-gray-300                    rounded-full                    transition                    ease-in-out                    m-0                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none                  " name="title" value="{{ old('title') }}" required>
+                <input type="text" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                       name="title" value="{{ old('title') }}" required>
 
                 <!-- error message untuk title -->
                 @error('title')
@@ -38,18 +41,17 @@
 
             <div class="mb-5">
                 <label for="status">Publish Status</label>
-                <select name="status" class="form-select appearance-none
-                      block                      w-full                      px-3                      py-1.5                      text-base                      font-normal                      text-gray-700                      bg-white bg-clip-padding bg-no-repeat                      border border-solid border-gray-300                      rounded-full                      transition                      ease-in-out                      m-0 focus:text-gray-700 focus:bg-white                      focus:border-blue-600 focus:outline-none" required>
+                <select name="status" class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded-full transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        required>
                     <option value="1" selected>Publish</option>
                     <option value="0">Draft</option>
-                </select>            </div>
+                </select></div>
             <div class="mb-5">
                 <label for="content">Content</label>
-                <textarea                    name="content" id="content"
-                                             class="
-                        form-control                        block                        w-full                        px-3                        py-1.5                        text-base                        font-normal                        text-gray-700                        bg-white bg-clip-padding                        border border-solid border-gray-300                        rounded                        transition                        ease-in-out                        m-0                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none                      "                    cols="30" rows="10"
-                                             required>{{ old('content') }}</textarea>
-
+                <textarea name="content" id="content"
+                          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                          cols="30" rows="10"
+                          required>{{ old('content') }}</textarea>
                 <!-- error message untuk content -->
                 @error('content')
                 <div class="invalid-feedback">
